@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="A frontend dashboard for the SuperMart Genie application" />
+    <meta name="author" content="Chaitanya Goyal, Vansh Kwatra & Avneet Singh" />
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Static Startup</title>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mx-auto">
+                    <div id="first">
+                        <div class="myform">
+                            <div class="logo mb-3">
+                                <div class="col-md-12 text-center">
+                                    <h1>Store Locator</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="myform">
+                            <div id="map" style="width: 100%; height: 500px;border-radius: 5px;"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        mapboxgl.accessToken =
+            'pk.eyJ1IjoidmFuc2hrd2F0cmEiLCJhIjoiY2tlenBxYmtsMGF2MzMycDQydTQ1NnZlcSJ9.a5iQD3SRvyHGUV7BzWTr1A';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            zoom: 9,
+            center: {
+                lat: -37.840935,
+                lng: 144.946457
+            }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

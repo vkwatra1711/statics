@@ -1,0 +1,53 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="navbar.css">
+
+
+
+<nav>
+
+    <div class="button">
+        <a href="/home2" class="btn">Home</a>
+        <div class="dropdown">
+            <button class="btn">Store Options</button>
+            <div class="dropdown-content">
+                <a href="/add">Add Store</a>
+                <a href="/deletestore">Delete Store</a>
+                <a href="/index">Stores on Map</a>
+                <a href="/store-list">List of Stores</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="btn">Fridge Options</button>
+            <div class="dropdown-content">
+                <a href="/register-fridge">Add Fridge</a>
+                <a href="/register-list">Fridge List</a>
+                <a href="/deletefridge">Delete Fridge</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="btn">Article Options</button>
+            <div class="dropdown-content">
+                <a href="/addarticle">Add Article</a>
+                <a href="/article_lookup">Article LookUp</a>
+                <a href="/updatearticlelookuplocation">Update Article Location</a>
+                <a href="/updatearticlelookupprice">Update Article Price</a>
+                <a href="/deletearticle">Delete Article</a>
+            </div>
+        </div>
+        <a href="/send-command" class="btn">Delivery Commands</a>
+        <button class="btn" id="auth-nav"></button>
+
+    </div>
+
+</nav>
+
+<script>
+    const isAuthenticated = localStorage.getItem('user');
+    const logoutElement = '<a class="nav-item nav-link" onClick="logout()">Logout</a>';
+    const loginElement = '<a class="nav-item nav-link" href="/login">Login</a>';
+
+    isAuthenticated
+        ?
+        $('#auth-nav').append(logoutElement) :
+        $('#auth-na').append(loginElement);
+</script>
